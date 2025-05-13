@@ -13,22 +13,24 @@ cloudinary.config({
 const HttpError = require('../models/http-error');
 
 const MIME_TYPE_MAP = {
-  'application/pdf': 'pdf',
-  'application/msword': 'doc',
-  'application/vnd.openxmlformats-officedocument.wordprocessingml.document': 'docx',
-  'application/vnd.ms-excel': 'xls',
-  'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': 'xlsx',
-  'application/vnd.ms-powerpoint': 'ppt',
-  'application/vnd.openxmlformats-officedocument.presentationml.presentation': 'pptx',
-  'text/plain': 'txt',
+  // 'application/pdf': 'pdf',
+  // 'application/msword': 'doc',
+  // 'application/vnd.openxmlformats-officedocument.wordprocessingml.document': 'docx',
+  // 'application/vnd.ms-excel': 'xls',
+  // 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': 'xlsx',
+  // 'application/vnd.ms-powerpoint': 'ppt',
+  // 'application/vnd.openxmlformats-officedocument.presentationml.presentation': 'pptx',
+  // 'text/plain': 'txt',
   'image/jpg': 'jpg',
-  'image/jpeg': 'jpeg'
+  'image/jpeg': 'jpeg',
+  'image/png': 'png',
+  'image/webp': 'webp'
 };
 
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: 'uploads/files', // Customize the folder where uploads will be stored in Cloudinary.
+    folder: 'bbx/parts', // Customize the folder where uploads will be stored in Cloudinary.
     format: async (req, file) => MIME_TYPE_MAP[file.mimetype], // Use MIME_TYPE_MAP to determine format.
     public_id: (req, file) => uuidv4(), // Generate a unique identifier for the file.
   },

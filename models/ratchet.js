@@ -8,6 +8,7 @@ const ratchetSchema = new Schema({
   Defense: { type: String, required: true },
   Stamina: { type: String, required: true },
   Weight: { type: String, required: true },
+  Image: { type: String, required: false },
 });
 
 module.exports = mongoose.model('Ratchet', ratchetSchema);

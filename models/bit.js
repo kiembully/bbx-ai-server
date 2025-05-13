@@ -10,7 +10,8 @@ const bitSchema = new Schema({
   Stamina: { type: String, required: true },
   Burst: { type: String, required: true },
   Dash: { type: String, required: true },
-  Weight: { type: String, required: true }
+  Weight: { type: String, required: true },
+  Image: { type: String, required: false },
 });
 
 module.exports = mongoose.model('Bit', bitSchema);

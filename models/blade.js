@@ -12,6 +12,7 @@ const bladeSchema = new Schema({
   Defense: { type: String, required: true },
   Stamina: { type: String, required: true },
   Weight: { type: String, required: true },
+  Image: { type: String, required: false },
 });
 
 // bladeSchema.plugin(uniqueValidator);
